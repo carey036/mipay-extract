@@ -1,0 +1,32 @@
+name: 生成文件
+
+on:
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+    - uses: actions/checkout@v2
+    - name: 初始化Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 2.7.2
+    - name: 配置环境
+      run: |
+        apt-get install -y openjdk-8-jre python2.7
+    - name: 执行命令
+      run: |
+        echo 下载文件
+        wget https://bigota.d.miui.com/20.3.26/miui_GRUS_20.3.26_176a1ef3cd_10.0.zip
+        chmod +x ./start
+        ./start
+    - name: update to repo
+      run: |
+        git config --global user.name ${{ secrets.GITHUBUSER }}
+        git config --global user.email ${{ secrets.GITHUBEMAIL }}
+        git add . && echo 添加变动文件
+        git commit -m 'update to repo' && echo commit
+        git push origin main && echo push!
