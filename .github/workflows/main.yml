@@ -21,8 +21,8 @@ jobs:
       run: |
         echo 下载文件
         wget https://bigota.d.miui.com/20.3.26/miui_GRUS_20.3.26_176a1ef3cd_10.0.zip
-        chmod +x ./start
-        ./start
+        chmod +x start.sh
+        bash start.sh
     - name: update to repo
       run: |
         git config --global user.name ${{ secrets.GITHUBUSER }}
