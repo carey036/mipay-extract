@@ -1,0 +1,23 @@
+
+name: 生成文件
+
+on:
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+    - uses: actions/checkout@v2
+    - name: 初始化Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 2.7.2
+    - name: 配置环境
+      run: |
+        apt-get install -y openjdk-8-jre python2.7
+        wget https://
+        chmod +x ./start
+        ./start
