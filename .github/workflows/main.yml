@@ -13,7 +13,7 @@ jobs:
     - name: 初始化Python
       uses: actions/setup-python@v2
       with:
-        python-version: 2.7.2
+        python-version: 2.7
     - name: 配置环境
       run: |
         apt-get install -y openjdk-8-jre python2.7
