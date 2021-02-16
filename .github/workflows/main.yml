@@ -20,7 +20,7 @@ jobs:
     - name: 执行命令
       run: |
         echo 下载文件
-        wget https://bigota.d.miui.com/20.3.26/miui_GRUS_20.3.26_176a1ef3cd_10.0.zip
+        wget https://hugeota.d.miui.com/21.2.3/miui_GRUS_21.2.3_60342cd1f2_11.0.zip
         chmod +x start.sh
         bash start.sh
     - name: update to repo
