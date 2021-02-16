@@ -28,6 +28,6 @@ jobs:
       run: |
         git config --global user.name ${{ secrets.GITHUBUSER }}
         git config --global user.email ${{ secrets.GITHUBEMAIL }}
-        git add . && echo 添加变动文件
+        git add eufix-magisk-model-ver.zip && echo 添加变动文件
         git commit -m 'update to repo' && echo commit
         git push origin master && echo push!
