@@ -16,6 +16,7 @@ jobs:
         python-version: 2.7
     - name: 配置环境
       run: |
+        apt-get update
         sudo apt-get install -y openjdk-8-jre python2.7
     - name: 执行命令
       run: |
