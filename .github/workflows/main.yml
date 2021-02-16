@@ -26,7 +26,6 @@ jobs:
         bash start.sh
     - name: update to repo
       run: |
-        rm miui_GRUS_21.2.3_60342cd1f2_11.0.zip
         git config --global user.name ${{ secrets.GITHUBUSER }}
         git config --global user.email ${{ secrets.GITHUBEMAIL }}
         git add . && echo 添加变动文件
